@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/nodus8tollens/to-do-list#readme",
   "devDependencies": {
+    "css-loader": "^6.6.0",
     "date-fns": "^2.28.0",
+    "style-loader": "^3.3.1",
     "webpack": "^5.68.0",
     "webpack-cli": "^4.9.2"
   }
