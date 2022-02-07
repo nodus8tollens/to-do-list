@@ -7,6 +7,45 @@
     <title>To-Do List</title>
     <script src="main.js" defer></script>
   </head>
+
   <body>
+  <header>To Do</header>
+  <main>
+    <nav>
+      <button>Items</button>
+      <button>Projects</button>
+      <button>Calendar</button>
+      <button id="add-task">+</button>
+    </nav>
+
+    <div id="pop-up-box-overlay">
+    <div id="pop-up-box">
+      <input type="text" id="title" placeholder="Title">
+      <input type="datetime-local" id="date">
+      <input type="text" id="description" placeholder="Description">
+
+      <div>
+      <label for="priority">Select priority:</label>
+      <select name="priority" id="priority">
+        <option value="Urgent & Important">Urgent & Important</option>
+        <option value="Urgent & Not Important">Urgent & Not Important</option>
+        <option value="Important & Not Urgent">Important & Not Urgent</option>
+        <option value="Not Important & Not Urgent">Not Important & Not Urgent</option>
+      </select>
+      </div>
+
+      <div id="pop-up-box-buttons">
+        <button id="pop-up-box-add">Add</button>
+        <button id="pop-up-box-cancel">Cancel</button>
+      </div>
+    </div>
+    </div>
+
+    <div id="content">
+
+    </div>
+  </main>
+  <footer> nodus8tollens</footer>
   </body>
+
 </html>

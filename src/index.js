@@ -1,30 +1,38 @@
+//DOM MANIPULATION
 import './style.css';
-import {toDo} from "./app";
+import {newTask, tasks} from "./app";
 
+function popUpActive(){
+    document.getElementById("pop-up-box-overlay").style.display = "block";
+}
 
-const title = 'title';
-const description = 'description';
-const dueDate = 'dueDate';
-const priority = 'priority';
-const notes = 'notes';
-const checklist = 'checklist';
+function popUpNotActive(){
+    document.getElementById("pop-up-box-overlay").style.display = "none";
+}
 
-const obj = toDo(title, description, dueDate, priority, notes, checklist);
+const title = document.getElementById("title");
+const date = document.getElementById("date");
+const description = document.getElementById("description");
+const priority = document.getElementById("priority");
+function clearPopUp(){
+    title.value = "";
+    date.value = "";
+    description.value = "";
+    priority.value = "";
+}
 
-console.log(obj.talk());
+const addTaskBtn = document.querySelector('#add-task');
+addTaskBtn.addEventListener('click', popUpActive);
 
-////////
+const popUpBoxAddBtn = document.querySelector('#pop-up-box-add');
+popUpBoxAddBtn.addEventListener('click', () => {
+    popUpNotActive();
+    newTask(title.value, date.value, description.value, priority.value);
+    clearPopUp();
+})
 
-const body = document.querySelector('body');
-const header = document.createElement('header');
-const main = document.createElement('main');
-const nav = document.createElement('nav');
-const div = document.createElement('div');
-const footer = document.createElement('footer');
-
-
-body.appendChild(header);
-main.appendChild(nav);
-main.appendChild(div);
-body.appendChild(main);
-body.appendChild(footer);
+const popUpBoxCancelBtn = document.querySelector('#pop-up-box-cancel');
+popUpBoxCancelBtn.addEventListener('click', () => {
+    popUpNotActive();
+    clearPopUp();
+});
