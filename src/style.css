@@ -38,7 +38,7 @@ nav{
 
 }
 
-#pop-up-box-overlay{
+#info-box-overlay, #pop-up-box-overlay{
     display: none;
     position: fixed;
     width: 100%;
@@ -50,21 +50,19 @@ nav{
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
-
-
 }
 
-#pop-up-box{
+#info-box, #pop-up-box{
     display: flex;
     flex-direction: column;
     position: absolute;
     top: 50%;
     left: 50%;
-    color: white;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
-
 }
+
+
 
 footer{
     height: 60px;
